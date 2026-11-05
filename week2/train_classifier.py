@@ -392,6 +392,10 @@ def main() -> None:
 
     if isinstance(best_model, Pipeline):
         save_top_features(best_model, out_dir / "top_model_features.csv")
+    else:
+        pd.DataFrame(columns=["class_association", "term", "weight"]).to_csv(
+            out_dir / "top_model_features.csv", index=False
+        )
     joblib.dump(best_model, out_dir / "best_model.joblib")
     data[["snippet_id", "label", "text", "normalized_text"]].to_csv(
         out_dir / "prepared_dataset.csv", index=False
