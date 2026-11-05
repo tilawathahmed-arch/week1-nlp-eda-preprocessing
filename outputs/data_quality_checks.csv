@@ -1,0 +1,8 @@
+check,count
+Blank snippets,0
+Duplicate raw rows,0
+Duplicate cleaned rows,0
+Rows with markup,4
+Rows with URLs,0
+Rows with email-like strings,0
+Rows containing digits,559
