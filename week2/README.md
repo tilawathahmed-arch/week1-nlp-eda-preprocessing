@@ -33,11 +33,12 @@ To use already-downloaded files, place rt-polarity.pos and rt-polarity.neg in da
 
 ## Implemented experiment
 
-The script compares:
-1. CountVectorizer + Multinomial Naive Bayes
-2. TF-IDF + Multinomial Naive Bayes
-3. TF-IDF + Logistic Regression
-4. TF-IDF + LinearSVC
+The script compares a dummy baseline plus:
+1. Most-frequent-class DummyClassifier baseline
+2. CountVectorizer + Multinomial Naive Bayes
+3. TF-IDF + Multinomial Naive Bayes
+4. TF-IDF + Logistic Regression
+5. TF-IDF + LinearSVC
 
 It uses a stratified 80/20 train/test split, stratified 5-fold cross-validation on the training partition, macro-F1 for model selection, and an untouched final test partition. Vectorization is inside each scikit-learn Pipeline to avoid fitting vocabulary/IDF statistics on validation or test data.
 
