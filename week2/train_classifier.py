@@ -37,7 +37,7 @@ MIRROR_BASE = (
     "master/"
 )
 MIRROR_FILES = {"positive": "rt-polarity.pos", "negative": "rt-polarity.neg"}
-TOKEN_PATTERN = r"(?u)\b\w[\w']+\b"
+TOKEN_PATTERN = r"(?u)\b\w+(?:'\w+)?\b"
 URL_RE = re.compile(r"https?://\S+|www\.\S+", re.IGNORECASE)
 EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b")
 TAG_RE = re.compile(r"<[^>]+>")
@@ -142,6 +142,7 @@ def build_candidates() -> dict[str, Pipeline]:
         token_pattern=TOKEN_PATTERN, lowercase=True,
     )
     return {
+        "Dummy most-frequent baseline": DummyClassifier(strategy="most_frequent"),
         "CountVectorizer + MultinomialNB": Pipeline([
             ("vectorizer", count_vectorizer),
             ("classifier", MultinomialNB(alpha=1.0)),
@@ -261,9 +262,9 @@ def main() -> None:
     )
     scoring = {
         "accuracy": "accuracy",
-        "precision_macro": "precision_macro",
-        "recall_macro": "recall_macro",
-        "f1_macro": "f1_macro",
+        "precision_macro": make_scorer(precision_score, average="macro", zero_division=0),
+        "recall_macro": make_scorer(recall_score, average="macro", zero_division=0),
+        "f1_macro": make_scorer(f1_score, average="macro", zero_division=0),
     }
     candidates = build_candidates()
     comparison_rows = []
@@ -389,7 +390,8 @@ def main() -> None:
     fig.savefig(out_dir / "cv_model_comparison.png", dpi=180)
     plt.close(fig)
 
-    save_top_features(best_model, out_dir / "top_model_features.csv")
+    if isinstance(best_model, Pipeline):
+        save_top_features(best_model, out_dir / "top_model_features.csv")
     joblib.dump(best_model, out_dir / "best_model.joblib")
     data[["snippet_id", "label", "text", "normalized_text"]].to_csv(
         out_dir / "prepared_dataset.csv", index=False
