@@ -1,25 +1,32 @@
 # Week 1: NLP Exploratory Data Analysis & Preprocessing
 
-This project performs reproducible exploratory data analysis (EDA) and preprocessing on the **Cornell sentence polarity dataset v1.0** (Pang & Lee; Rotten Tomatoes snippets).
+A reproducible EDA and text-preprocessing project using the **Cornell sentence polarity dataset v1.0** (Pang & Lee; Rotten Tomatoes snippets).
 
 > This is the **sentence-level v1.0 corpus**, not Cornell's separate document-level movie-review polarity dataset v2.0.
+
+## Final report
+
+- **Word report:** [Week1_NLP_EDA_Report.docx](https://github.com/tilawathahmed-arch/week1-nlp-eda-preprocessing) is supplied as a separate submission file in this conversation.
+- **Full Markdown report:** [REPORT.md](REPORT.md)
+- **Submission description (346 words):** [submission_description.txt](submission_description.txt)
 
 ## Dataset
 
 - **10,662 snippets**: 5,331 positive and 5,331 negative.
 - One snippet per line, generally approximately one sentence.
-- Labels are derived from Rotten Tomatoes Fresh/Rotten review ratings.
+- Labels derive from Rotten Tomatoes Fresh/Rotten review ratings.
 - Official source: [Cornell Movie Review Data](https://www.cs.cornell.edu/people/pabo/movie-review-data/).
 - Dataset documentation: [official v1.0 README](https://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.README.1.0.txt).
-- Retrieval mirror used to validate the measured snapshot: [public plain-text files](https://github.com/abromberg/sentiment_analysis_python/tree/master/polarityData/rt-polaritydata/).
+- Public retrieval mirror used to validate the measured snapshot: [plain-text source files](https://github.com/abromberg/sentiment_analysis_python/tree/master/polarityData/rt-polaritydata/).
 
-The script first attempts the official Cornell archive. When that endpoint is unavailable, it downloads the two plain-text class files from the public mirror. The mirror is a retrieval fallback; Cornell is the dataset's primary source.
+The script first attempts the official Cornell archive. If that endpoint is unavailable, it downloads the two plain-text class files from the public mirror. Cornell remains the primary dataset source; the mirror is only a retrieval fallback.
 
 ## Project files
 
 ```text
 .
 ├── README.md
+├── REPORT.md
 ├── eda_analysis.py
 ├── requirements.txt
 ├── submission_description.txt
@@ -30,10 +37,9 @@ The script first attempts the official Cornell archive. When that endpoint is un
     ├── data_quality_checks.csv
     ├── token_length_histogram.csv
     ├── top_content_unigrams.csv
-    └── top_content_bigrams.csv
+    ├── top_content_bigrams.csv
+    └── fig1_...svg through fig5_...svg
 ```
-
-The full Word report is provided separately as **Week1_NLP_EDA_Report.docx**. The script recreates the charts and data exports.
 
 ## Run locally
 
@@ -42,7 +48,7 @@ Python 3.9 or newer is recommended.
 ```bash
 python -m venv .venv
 # Windows
-.venv\Scripts\activate
+.venv\\Scripts\\activate
 # macOS/Linux
 source .venv/bin/activate
 
@@ -59,8 +65,8 @@ You can also manually place the official `rt-polarity.pos` and `rt-polarity.neg`
 - Raw and content-word unigram and adjacent-bigram frequencies.
 - Data-quality checks for blank rows, duplicates, markup, URLs, email-like strings, and digit-bearing rows.
 - Negation, question-mark, and exclamation-mark summaries by class.
-- A cleaned CSV that retains original text, normalized text, labels, IDs, and quality flags.
-- JSON metrics, CSV tables, and five PNG charts.
+- Cleaned CSV preserving original text, normalized text, labels, IDs, and quality flags.
+- JSON metrics, CSV tables, and five PNG charts; five SVG chart previews are committed in `outputs/`.
 
 ## Measured results
 
@@ -82,7 +88,7 @@ The included snapshot was calculated from both complete source files (5,331 line
 
 The most frequent content unigrams include **film** (1,462), **movie** (1,327), **it's** (1,134), **not** (824), and **story** (481). Leading content bigrams include **it's not** (75), **romantic comedy** (64), and **writer director** (49). Negation is deliberately retained because it can reverse sentiment.
 
-These are descriptive corpus statistics, not classifier-performance metrics. The dataset is balanced by design and its labels may be noisy because sentence snippets inherit the overall review's Fresh/Rotten label.
+These are descriptive corpus statistics, not classifier-performance metrics. The dataset is balanced by design, and its labels may be noisy because sentence snippets inherit the overall review's Fresh/Rotten label.
 
 ## Modeling recommendations
 
