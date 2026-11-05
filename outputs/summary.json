@@ -1,0 +1,323 @@
+{
+  "dataset": "Cornell sentence polarity dataset v1.0 (Rotten Tomatoes snippets)",
+  "dataset_source": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+  "dataset_version": "sentence polarity dataset v1.0 (June 2005 README; released July 2005)",
+  "retrieval_mirror": "https://github.com/abromberg/sentiment_analysis_python/tree/master/polarityData/rt-polaritydata/",
+  "provenance": "Calculated from both complete public source files using the project regular-expression tokenizer and conservative normalization rules; the mirror is a retrieval convenience, while Cornell is the primary dataset source.",
+  "documents": 10662,
+  "class_counts": {
+    "negative": 5331,
+    "positive": 5331
+  },
+  "class_percentages": {
+    "negative": 50,
+    "positive": 50
+  },
+  "missing_or_blank": 0,
+  "duplicate_raw_rows": 0,
+  "duplicate_clean_rows": 0,
+  "character_length": {
+    "count": 10662,
+    "min": 4,
+    "q1": 76,
+    "median": 111,
+    "mean": 114.16,
+    "q3": 149,
+    "max": 267
+  },
+  "token_length": {
+    "count": 10662,
+    "min": 1,
+    "q1": 12,
+    "median": 18,
+    "mean": 18.9,
+    "q3": 25,
+    "max": 51
+  },
+  "mean_unique_tokens_per_snippet": 17.46,
+  "total_tokens": 201517,
+  "vocabulary_size": 18989,
+  "quality_flags": {
+    "rows_with_markup": 4,
+    "rows_with_urls": 0,
+    "rows_with_email_like_strings": 0,
+    "rows_with_digits": 559,
+    "total_exclamation_marks": 121,
+    "total_question_marks": 227,
+    "total_negation_markers": 1529
+  },
+  "by_class": {
+    "negative": {
+      "documents": 5331,
+      "characters": {
+        "count": 5331,
+        "min": 4,
+        "q1": 75,
+        "median": 110,
+        "mean": 112.86,
+        "q3": 147,
+        "max": 266
+      },
+      "tokens": {
+        "count": 5331,
+        "min": 1,
+        "q1": 12,
+        "median": 18,
+        "mean": 18.86,
+        "q3": 25,
+        "max": 51
+      },
+      "mean_unique_tokens": 17.45,
+      "mean_negations": 0.1701,
+      "mean_exclamations": 0.0116,
+      "mean_questions": 0.0313
+    },
+    "positive": {
+      "documents": 5331,
+      "characters": {
+        "count": 5331,
+        "min": 8,
+        "q1": 77,
+        "median": 112,
+        "mean": 115.46,
+        "q3": 151,
+        "max": 267
+      },
+      "tokens": {
+        "count": 5331,
+        "min": 1,
+        "q1": 12.5,
+        "median": 18,
+        "mean": 18.94,
+        "q3": 25,
+        "max": 51
+      },
+      "mean_unique_tokens": 17.46,
+      "mean_negations": 0.1167,
+      "mean_exclamations": 0.0111,
+      "mean_questions": 0.0113
+    }
+  },
+  "top_unigrams_content": [
+    {
+      "term": "film",
+      "count": 1462
+    },
+    {
+      "term": "movie",
+      "count": 1327
+    },
+    {
+      "term": "it's",
+      "count": 1134
+    },
+    {
+      "term": "not",
+      "count": 824
+    },
+    {
+      "term": "one",
+      "count": 758
+    },
+    {
+      "term": "like",
+      "count": 738
+    },
+    {
+      "term": "story",
+      "count": 481
+    },
+    {
+      "term": "good",
+      "count": 419
+    },
+    {
+      "term": "no",
+      "count": 399
+    },
+    {
+      "term": "much",
+      "count": 388
+    },
+    {
+      "term": "even",
+      "count": 386
+    },
+    {
+      "term": "comedy",
+      "count": 382
+    },
+    {
+      "term": "time",
+      "count": 376
+    },
+    {
+      "term": "characters",
+      "count": 330
+    },
+    {
+      "term": "well",
+      "count": 328
+    },
+    {
+      "term": "little",
+      "count": 307
+    },
+    {
+      "term": "way",
+      "count": 298
+    },
+    {
+      "term": "funny",
+      "count": 294
+    },
+    {
+      "term": "director",
+      "count": 289
+    },
+    {
+      "term": "make",
+      "count": 280
+    }
+  ],
+  "top_bigrams_content": [
+    {
+      "term": "it's not",
+      "count": 75
+    },
+    {
+      "term": "romantic comedy",
+      "count": 64
+    },
+    {
+      "term": "writer director",
+      "count": 49
+    },
+    {
+      "term": "there's no",
+      "count": 43
+    },
+    {
+      "term": "feels like",
+      "count": 41
+    },
+    {
+      "term": "may not",
+      "count": 39
+    },
+    {
+      "term": "special effects",
+      "count": 38
+    },
+    {
+      "term": "it's hard",
+      "count": 34
+    },
+    {
+      "term": "plays like",
+      "count": 34
+    },
+    {
+      "term": "sci fi",
+      "count": 34
+    },
+    {
+      "term": "year old",
+      "count": 32
+    },
+    {
+      "term": "it's also",
+      "count": 31
+    },
+    {
+      "term": "soap opera",
+      "count": 31
+    },
+    {
+      "term": "subject matter",
+      "count": 31
+    },
+    {
+      "term": "big screen",
+      "count": 30
+    },
+    {
+      "term": "love story",
+      "count": 28
+    },
+    {
+      "term": "well acted",
+      "count": 27
+    },
+    {
+      "term": "feel like",
+      "count": 26
+    },
+    {
+      "term": "first time",
+      "count": 26
+    },
+    {
+      "term": "old fashioned",
+      "count": 26
+    }
+  ],
+  "token_length_histogram": [
+    {
+      "range": "0-4",
+      "negative": 190,
+      "positive": 172
+    },
+    {
+      "range": "5-9",
+      "negative": 617,
+      "positive": 677
+    },
+    {
+      "range": "10-14",
+      "negative": 952,
+      "positive": 904
+    },
+    {
+      "range": "15-19",
+      "negative": 1155,
+      "positive": 1178
+    },
+    {
+      "range": "20-24",
+      "negative": 1052,
+      "positive": 1006
+    },
+    {
+      "range": "25-29",
+      "negative": 757,
+      "positive": 723
+    },
+    {
+      "range": "30-34",
+      "negative": 375,
+      "positive": 401
+    },
+    {
+      "range": "35-39",
+      "negative": 152,
+      "positive": 182
+    },
+    {
+      "range": "40-44",
+      "negative": 62,
+      "positive": 77
+    },
+    {
+      "range": "45-49",
+      "negative": 18,
+      "positive": 10
+    },
+    {
+      "range": "50-59",
+      "negative": 1,
+      "positive": 1
+    }
+  ],
+  "caveat": "Descriptive corpus statistics only. No sentiment classifier was trained and no model accuracy is claimed. Sentence labels are inherited from the overall Fresh/Rotten review rating and may be noisy."
+}
