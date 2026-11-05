@@ -6,7 +6,7 @@ A reproducible EDA and text-preprocessing project using the **Cornell sentence p
 
 ## Final report
 
-- **Word report:** [Week1_NLP_EDA_Report.docx](https://github.com/tilawathahmed-arch/week1-nlp-eda-preprocessing) is supplied as a separate submission file in this conversation.
+- **Word report:** The formatted `Week1_NLP_EDA_Report.docx` is supplied separately for upload to the internship portal.
 - **Full Markdown report:** [REPORT.md](REPORT.md)
 - **Submission description (346 words):** [submission_description.txt](submission_description.txt)
 
